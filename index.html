@@ -4,38 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Number Adder</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 500px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        input {
-            padding: 10px;
-            font-size: 16px;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-        h3 {
-            margin-top: 20px;
-            color: #333;
-        }
-    </style>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <div class="container">
@@ -50,42 +19,6 @@
         <h3 id="result"></h3>
     </div>
 
-    <script>
-        document.getElementById('addButton').addEventListener('click', function() {
-            // Get input values
-            const num1Text = document.getElementById('input1').value.trim().toLowerCase();
-            const num2Text = document.getElementById('input2').value.trim().toLowerCase();
-            
-            // Convert word to number
-            const wordToNumber = {
-                'zero': 0, 'one': 1, 'two': 2, 'three': 3, 'four': 4,
-                'five': 5, 'six': 6, 'seven': 7, 'eight': 8, 'nine': 9
-            };
-            
-            // Validate and convert inputs
-            let num1, num2;
-            let isValid = true;
-            
-            if (num1Text in wordToNumber) {
-                num1 = wordToNumber[num1Text];
-            } else {
-                document.getElementById('result').textContent = 'First input is not a valid number word (zero to nine)';
-                isValid = false;
-            }
-            
-            if (num2Text in wordToNumber) {
-                num2 = wordToNumber[num2Text];
-            } else if (isValid) {
-                document.getElementById('result').textContent = 'Second input is not a valid number word (zero to nine)';
-                isValid = false;
-            }
-            
-            // If inputs are valid, calculate and display result
-            if (isValid) {
-                const sum = num1 + num2;
-                document.getElementById('result').textContent = `${num1Text} + ${num2Text} = ${sum}`;
-            }
-        });
-    </script>
+    <script src="./node.js"></script>
 </body>
 </html>
